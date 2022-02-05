@@ -5,7 +5,7 @@
   <artifactId>sismo-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>Sismo API Project</name>
+  <name>Sismo API</name>
 
 	<build>
 		<finalName>sismo-api</finalName>
