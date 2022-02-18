@@ -1,9 +1,10 @@
-# Test we can logon to 'webservers' and execute python with json lib.
-# ansible webservers -m ping
-
-- name: Example from an Ansible Playbook
-  ansible.builtin.ping:
-
-- name: Induce an exception to see what happens
-  ansible.builtin.ping:
-    data: crash
+---
+- hosts: all
+  become: yes
+  become_user: vagrant
+  tasks:
+   - name: Create new directory
+     become_user: ubuntu
+     file:
+      path: /home/vagrant/hp
+      state: directory
