@@ -13,7 +13,7 @@ pipeline {
     }
     stage('invoke playbook'){
       steps{
-				ansiblePlaybook credentialsId: 'DigitalOceanUser', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: './app_playbook.yml'               			}
+				ansiblePlaybook credentialsId: 'DigitalOceanUser', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: './playbook.yaml'               			}
    	}
   }
 }
