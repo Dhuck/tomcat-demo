@@ -11,5 +11,9 @@ pipeline {
         }
       }
     }
+    stage('invoke playbook'){
+      steps{
+				ansiblePlaybook credentialsId: 'DigitalOceanUser', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: './playbook.yaml'               			}
+   	}
   }
 }
