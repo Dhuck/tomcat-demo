@@ -9,8 +9,7 @@ pipeline {
 stages {
     stage('invoke playbook'){
       steps {
-	    sh 'ansible all -m ping -vvv'
-	    sh 'ansible-playbook -i /etc/ansible/hosts -u vagrant --private-key=$ANSIBLE_PRIVATE_KEY playbook.yaml'
+	    sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
       }
 	}
   }
