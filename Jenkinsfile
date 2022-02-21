@@ -11,8 +11,7 @@ stages {
       steps {
 	    sh '''
               ansible --version
-	      ansible-playbook --version
-	      echo $ANSIBLE_PRIVATE_KEY
+	      ansible-playbook -i /etc/ansible/hosts --private-key=$ANSIBLE_PRIVATE_KEY ./playbook.yaml
         '''
       }
 	}
