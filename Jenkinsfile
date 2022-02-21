@@ -9,6 +9,7 @@ pipeline {
 stages {
     stage('invoke playbook'){
       steps {
+	    sh 'ansible-playbook -vvv'
 	    sh 'ansible-playbook -i /etc/ansible/hosts -u vagrant --private-key=$ANSIBLE_PRIVATE_KEY playbook.yaml'
       }
 	}
