@@ -3,11 +3,14 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stages {
+stages {
     stage('invoke playbook'){
-      sh '''
-      ansible --version
-      '''
-    }
+      steps {
+	    sh '''
+          ansible --version
+		  ansible-playbook --version
+        '''
+      }
+	}
   }
 }
