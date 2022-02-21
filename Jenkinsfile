@@ -5,6 +5,7 @@ pipeline {
   }
 	environment {
 	  ANSIBLE_PRIVATE_KEY=credentials('Vagrant')
+		ANSIBLE_HOST_KEY_CHECKING='False'
 	}
 stages {
     stage('invoke playbook'){
