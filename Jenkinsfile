@@ -8,5 +8,6 @@ pipeline {
       sh '''
       ansible --version
       '''
+    }
   }
 }
