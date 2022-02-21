@@ -10,7 +10,7 @@ pipeline {
 stages {
     stage('invoke playbook'){
       steps {
-	    sh 'ansible-playbook -i /etc/ansible/hosts --private-key=$ANSIBLE_PRIVATE_KEY playbook.yaml'
+	    sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
       }
 	}
   }
