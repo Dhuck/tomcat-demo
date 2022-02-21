@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
 	environment {
-	  ANSIBLE_PRIVATE_KEY=credentials('DigitalOceanUser')
+	  ANSIBLE_PRIVATE_KEY=credentials('vagrant')
 	}
 stages {
     stage('invoke playbook'){
