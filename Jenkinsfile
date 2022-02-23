@@ -21,7 +21,7 @@ stages {
     }
     stage('OWASP Scan') {
       steps {
-          sh '/home/hpolanco/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.jar"'
+          sh '/home/hpolanco/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war"'
       }
     }
 	
