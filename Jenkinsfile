@@ -10,9 +10,20 @@ pipeline {
 stages {
     stage('invoke playbook'){
       steps {
-	    //sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
-	      ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
+          //sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
+          ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
       }
-	}
+    }
+    stage('Scan') {
+      steps {
+          sh 'mvn clean install'
+      }
+    }
+    stage('OWASP Scan') {
+      steps {
+          sh '/home/hpolanco/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.jar"'
+      }
+    }
+	
   }
 }
