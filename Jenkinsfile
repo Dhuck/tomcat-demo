@@ -22,7 +22,7 @@ stages {
     }
     stage('OWASP Scan') {
       steps {
-          sh '/home/hpolanco/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war" -f CSV'
+          sh '/home/hpolanco/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war" -f JSON'
       }
     }
 	
