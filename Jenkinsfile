@@ -11,7 +11,7 @@ stages {
     stage('invoke playbook'){
       steps {
           //sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
-          ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
+          //ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
       }
     }
     stage('Scan') {
