@@ -17,7 +17,9 @@ stages {
     }
     stage('Scan') {
       steps {
-          sh 'mvn clean install'
+          withSonarQubeEnv(installationName: 'sq1') { 
+          sh 'mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        }
       }
     }
     stage('OWASP Scan') {
