@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    //ANSIBLE_PRIVATE_KEY=credentials('Vagrant')
+    ANSIBLE_PRIVATE_KEY=credentials('hpolanco')
     ANSIBLE_HOST_KEY_CHECKING='False'
   }
 stages {
