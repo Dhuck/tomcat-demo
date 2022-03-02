@@ -12,7 +12,7 @@ stages {
       steps {
           sh 'echo "Ansible"'
 	  sh 'ansible all -m ping -vvv'
-          sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml -u hpolanco'
+          sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
           //ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
       }
     }
