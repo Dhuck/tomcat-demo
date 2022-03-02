@@ -5,5 +5,5 @@
   tasks:
    - name: Create new directory
      file:
-      path: /home/vagrant/hp
+      path: /home/hpolanco/hp
       state: directory
