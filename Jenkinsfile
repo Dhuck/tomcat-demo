@@ -10,7 +10,7 @@ pipeline {
 stages {
     stage('invoke playbook'){
       steps {
-          sh 'echo "Ansible"'
+          sh 'echo "Ansible Provisioning"'
 	  sh 'ansible all -m ping -vvv'
           sh 'ansible-playbook -i /etc/ansible/hosts playbook.yaml'
           //ansiblePlaybook disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'playbook.yaml'
