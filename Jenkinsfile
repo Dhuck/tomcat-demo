@@ -23,6 +23,11 @@ stages {
         }
       }
     }
+    stage('Build') {
+      steps {
+          sh 'mvn clean install'
+      }
+    }
     stage('OWASP Scan') {
       steps {
           //sh '/home/vagrant/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war" -f JSON'
