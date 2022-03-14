@@ -1,3 +1,4 @@
+@Library("shared_library") _
 pipeline {
   agent { label 'linux' }
   options {
@@ -36,7 +37,7 @@ stages {
 	  sh '/home/vagrant/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war"'
       }
     }
-    stage('Create Issue') {
+    stage('Creating Jira Issue') {
             steps {
                 jiraCreateIssue(key: "NTL", summary: "Security Report", description: "h2. Security issues report.", issueTypeName: "Task")
             }
