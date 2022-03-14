@@ -6,6 +6,8 @@ pipeline {
   environment {
     ANSIBLE_PRIVATE_KEY=credentials('hpolanco')
     ANSIBLE_HOST_KEY_CHECKING='False'
+    JIRA_URL = "https://natasec.atlassian.net"
+    JIRA_CREDENTIALS = credentials('jira-rest-api')	  
   }
 stages {
     stage('invoke playbook'){
@@ -34,6 +36,10 @@ stages {
 	  sh '/home/vagrant/dependency-check/bin/dependency-check.sh --project "NATASEC" -scan "target/*.war"'
       }
     }
-	
+    stage('Create Issue') {
+            steps {
+                jiraCreateIssue(key: "NTL", summary: "Security Report", description: "h2. Security issues report.", issueTypeName: "Task")
+            }
+        }
   }
 }
